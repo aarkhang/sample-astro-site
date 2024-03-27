@@ -5,8 +5,8 @@ pubDate: 2024-03-25
 description: 'This is the first post of my new Astro blog.'
 author: 'A. Arkhangelskiy'
 image:
-    url: 'https://docs.astro.build/assets/full-logo-dark.png'
-    alt: 'The full Astro logo.'
+  url: 'https://docs.astro.build/assets/full-logo-dark.png'
+  alt: 'The full Astro logo.'
 tags: ["astro", "blogging", "learning in public"]
 ---
 
