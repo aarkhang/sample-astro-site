@@ -1,7 +1,5 @@
 ---
-import '../styles/global.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "About Me";
 const happy = true;
@@ -9,10 +7,10 @@ const finished = false;
 const goal = 5;
 
 const identity = {
-    firstName: "Alexander",
-    lastName: "Arkhangelskiy",
-    occupation: "Pensioner",
-    hobbies: ["mathematics", "computer graphics"],
+  firstName: "Alexander",
+  lastName: "Arkhangelskiy",
+  occupation: "Pensioner",
+  hobbies: ["mathematics", "computer graphics"],
 };
 
 const skills = ["Fortran", "Pascal", "C++"];
@@ -22,86 +20,56 @@ const fontWeight = "bold";
 const textCase = "uppercase";
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{pageTitle}</title>
-        <style define:vars={{ skillColor, fontWeight, textCase }}>
-            h1 {
-                color: purple;
-                font-size: 3rem;
-            }
-            h2 {
-                color: blue;
-                font-size: 2rem;
-            }
-            h3 {
-                color: black;
-                font-size: 1rem;
-            }
-            .skill {
-                color: var(--skillColor);
-                font-weight: var(--fontWeight);
-                text-transform: var(--textCase);
-            }
-        </style>
-    </head>
-    <body>
-		<Header />
+<style define:vars={{ skillColor, fontWeight, textCase }}>
+  .skill {
+    color: var(--skillColor);
+    font-weight: var(--fontWeight);
+    text-transform: var(--textCase);
+  }
+</style>
 
-        <h2>{pageTitle}</h2>
-        <h3>... and my new Astro site!</h3>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>... and my new Astro site!</h2>
 
-        <p>
-            I am working through <a
-                href="https://docs.astro.build/en/tutorial/0-introduction/"
-                >Astro's introductory tutorial</a
-            >. This is the second page on my website, and it's the first one I
-            built myself!
-        </p>
+  <p>
+    I am working through <a
+      href="https://docs.astro.build/en/tutorial/0-introduction/"
+      >Astro's introductory tutorial</a
+    >. This is the second page on my website, and it's the first one I built
+    myself!
+  </p>
 
-        <p>
-            This site will update as I complete more of the tutorial, so keep
-            checking back and see how my journey is going!
-        </p>
+  <p>
+    This site will update as I complete more of the tutorial, so keep checking
+    back and see how my journey is going!
+  </p>
 
+  {happy && <p>I am happy to be learning Astro!</p>}
 
-        {happy && <p>I am happy to be learning Astro!</p>}
+  {finished && <p>I finished this tutorial!</p>}
 
-        {finished && <p>I finished this tutorial!</p>}
-      
-        {
-          goal > 0 ? (
-            <p>My goal is to finish in {goal} days.</p>
-          ) : (
-            <p>My goal is not finish at all.</p>
-          )
-        }
+  {
+    goal > 0 ? (
+      <p>My goal is to finish in {goal} days.</p>
+    ) : (
+      <p>My goal is not finish at all.</p>
+    )
+  }
 
-        <p>Here are a few facts about me:</p>
-        <ul>
-            <li>My name is {identity.firstName}.</li>
-            <li>I am a {identity.occupation}.</li>
-            {
-                identity.hobbies.length >= 2 && (
-                    <li>
-                        Two of my hobbies are: {identity.hobbies[0]} and{" "}
-                        {identity.hobbies[1]}
-                    </li>
-                )
-            }
-        </ul>
-        <p>My skills are:</p>
-        <ul>
-            {skills.map((skill) => <li class="skill">{skill}</li>)}
-        </ul>
-
-	<Footer />
-	<script>
-	  import "../scripts/menu.js";
-	</script>
-    </body>
-</html>
+  <p>Here are a few facts about me:</p>
+  <ul>
+    <li>My name is {identity.firstName}.</li>
+    <li>I am a {identity.occupation}.</li>
+    {
+      identity.hobbies.length >= 2 && (
+        <li>
+          Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
+        </li>
+      )
+    }
+  </ul>
+  <p>My skills are:</p>
+  <ul>
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
+  </ul>
+</BaseLayout>

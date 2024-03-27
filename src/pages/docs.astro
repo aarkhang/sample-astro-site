@@ -1,52 +1,61 @@
 ---
-import "../styles/global.css";
-import Header from "../components/Header.astro";
-import Footer from '../components/Footer.astro';
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Astro Documentation";
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{pageTitle}</title>
-    </head>
-
-    <body>
-        <Header />
-
-        <h1>{pageTitle}</h1>
-
-        <ul>
-            <li>
-                <a href="https://docs.astro.build/en/basics/astro-pages/#file-based-routing">File-based routing in Astro</a>
-            </li>
-            <li>
-                <a href="https://docs.astro.build/en/basics/astro-pages/#astro-pages">Astro Page HTML</a>
-            </li>
-            <li>
-                <a href="https://docs.astro.build/en/basics/astro-syntax/#jsx-like-expressions">Dynamic expressions in Astro</a>
-            </li>
-            <li>
-                <a href="https://docs.astro.build/en/basics/astro-syntax/#differences-between-astro-and-jsx">Astro syntax vs JSX - comparison</a>
-            </li>
-            <li>
-                <a href="https://docs.astro.build/en/guides/styling/#styling-in-astro">Astro &lt;style&gt; tag</a>
-            </li>
-            <li>
-                <a href="https://docs.astro.build/en/guides/styling/#css-variables">CSS variables in Astro</a>
-            </li>
-            <li>
-                <a href="https://docs.astro.build/en/basics/astro-components/">Astro Component Overview</a>
-            </li>
-        </ul>
-
-		<Footer />
-        <script>
-          import "../scripts/menu.js";
-        </script>
-    </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>
+    Links from Astro's introductory <a
+      href="https://docs.astro.build/en/tutorial/0-introduction/">tutorial</a>
+  </h2>
+  <ul>
+    <li>
+      <a
+        href="https://docs.astro.build/en/basics/astro-pages/#file-based-routing"
+        >File-based routing in Astro</a
+      >
+    </li>
+    <li>
+      <a href="https://docs.astro.build/en/basics/astro-pages/#astro-pages"
+        >Astro Page HTML</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://docs.astro.build/en/basics/astro-syntax/#jsx-like-expressions"
+        >Dynamic expressions in Astro</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://docs.astro.build/en/basics/astro-syntax/#differences-between-astro-and-jsx"
+        >Astro syntax vs JSX - comparison</a
+      >
+    </li>
+    <li>
+      <a href="https://docs.astro.build/en/guides/styling/#styling-in-astro"
+        >Astro &lt;style&gt; tag</a
+      >
+    </li>
+    <li>
+      <a href="https://docs.astro.build/en/guides/styling/#css-variables"
+        >CSS variables in Astro</a
+      >
+    </li>
+    <li>
+      <a href="https://docs.astro.build/en/basics/astro-components/"
+        >Astro Component Overview</a
+      >
+    </li>
+    <li>
+      <a href="https://docs.astro.build/en/basics/layouts/"
+        >Astro layout components</a
+      >
+    </li>
+    <li>
+      <a href="https://docs.astro.build/en/basics/astro-components/#slots"
+        >Astro &lt;slot /&gt;</a
+      >
+    </li>
+  </ul>
+</BaseLayout>
