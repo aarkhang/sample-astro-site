@@ -7,11 +7,15 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "prepare": "husky"
   },
   "dependencies": {
-    "astro": "^4.5.9",
     "@astrojs/check": "^0.5.10",
+    "astro": "^4.5.9",
     "typescript": "^5.4.3"
+  },
+  "devDependencies": {
+    "husky": "^9.0.11"
   }
 }
