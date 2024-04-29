@@ -1,75 +1,67 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-const pageTitle = "About Me";
+const pageTitle = 'About Me';
 const happy = true;
 const finished = false;
 const goal = 5;
 
 const identity = {
-  firstName: "Alexander",
-  lastName: "Arkhangelskiy",
-  occupation: "Pensioner",
-  hobbies: ["mathematics", "computer graphics"],
+	firstName: 'Alexander',
+	lastName: 'Arkhangelskiy',
+	occupation: 'Pensioner',
+	hobbies: ['mathematics', 'computer graphics'],
 };
 
-const skills = ["Fortran", "Pascal", "C++"];
+const skills = ['Fortran', 'Pascal', 'C++'];
 
-const skillColor = "navy";
-const fontWeight = "bold";
-const textCase = "uppercase";
+const skillColor = 'navy';
+const fontWeight = 'bold';
+const textCase = 'uppercase';
 ---
 
 <style define:vars={{ skillColor, fontWeight, textCase }}>
-  .skill {
-    color: var(--skillColor);
-    font-weight: var(--fontWeight);
-    text-transform: var(--textCase);
-  }
+	.skill {
+		color: var(--skillColor);
+		font-weight: var(--fontWeight);
+		text-transform: var(--textCase);
+	}
 </style>
 
 <BaseLayout pageTitle={pageTitle}>
-  <h2>... and my new Astro site!</h2>
+	<h2>... and my new Astro site!</h2>
 
-  <p>
-    I am working through <a
-      href="https://docs.astro.build/en/tutorial/0-introduction/"
-      >Astro's introductory tutorial</a
-    >. This is the second page on my website, and it's the first one I built
-    myself!
-  </p>
+	<p>
+		I am working through <a href="https://docs.astro.build/en/tutorial/0-introduction/"
+			>Astro's introductory tutorial</a
+		>. This is the second page on my website, and it's the first one I built myself!
+	</p>
 
-  <p>
-    This site will update as I complete more of the tutorial, so keep checking
-    back and see how my journey is going!
-  </p>
+	<p>
+		This site will update as I complete more of the tutorial, so keep checking back and see how my
+		journey is going!
+	</p>
 
-  {happy && <p>I am happy to be learning Astro!</p>}
+	{happy && <p>I am happy to be learning Astro!</p>}
 
-  {finished && <p>I finished this tutorial!</p>}
+	{finished && <p>I finished this tutorial!</p>}
 
-  {
-    goal > 0 ? (
-      <p>My goal is to finish in {goal} days.</p>
-    ) : (
-      <p>My goal is not finish at all.</p>
-    )
-  }
+	{goal > 0 ? <p>My goal is to finish in {goal} days.</p> : <p>My goal is not finish at all.</p>}
 
-  <p>Here are a few facts about me:</p>
-  <ul>
-    <li>My name is {identity.firstName}.</li>
-    <li>I am a {identity.occupation}.</li>
-    {
-      identity.hobbies.length >= 2 && (
-        <li>
-          Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
-        </li>
-      )
-    }
-  </ul>
-  <p>My skills are:</p>
-  <ul>
-    {skills.map((skill) => <li class="skill">{skill}</li>)}
-  </ul>
+	<p>Here are a few facts about me:</p>
+	<ul>
+		<li>My name is {identity.firstName}.</li>
+		<li>I am a {identity.occupation}.</li>
+		{
+			identity.hobbies.length >= 2 && (
+				<li>
+					Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
+				</li>
+			)
+		}
+	</ul>
+	<p>My skills are:</p>
+	<ul>
+		{skills.map((skill) => <li class="skill">{skill}</li>)}
+	</ul>
 </BaseLayout>
