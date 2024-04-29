@@ -11,6 +11,8 @@
     "check": "astro check",
     "lint:js": "eslint \"src/**/*.{js,ts,astro}\"",
     "lint:css": "stylelint \"src/**/*.{css,astro}\"",
+    "lint:fmt": "prettier . --check",
+    "format": "prettier . --write --cache",
     "test": "npm run lint:css && npm run lint:js && npm run check",
     "prepare": "husky"
   },
@@ -21,12 +23,17 @@
     "typescript": "^5.4.3"
   },
   "devDependencies": {
+    "@eslint/js": "^9.1.1",
     "@typescript-eslint/parser": "^7.7.1",
     "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-astro": "^0.34.0",
+    "globals": "^15.0.0",
     "husky": "^9.0.11",
+    "prettier": "3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
     "stylelint": "^16.4.0",
-    "stylelint-config-standard": "^36.0.0",
-    "stylelint-config-html": "^1.1.0"
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-standard": "^36.0.0"
   }
 }
