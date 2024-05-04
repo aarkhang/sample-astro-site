@@ -4,9 +4,20 @@
 	font-size: 2em;
 }
 
+.dark .greeting {
+	color: #fff;
+}
+
 .newgreet {
 	color: navy;
 	background: #f3f5f9;
 	border: 1px solid navy;
+	font-size: 20px;
+}
+
+.dark .newgreet {
+	color: #fff;
+	background: #0d0950;
+	border: 1px solid #fff;
 	font-size: 20px;
 }

@@ -1,6 +1,12 @@
 {
   "extends": ["stylelint-config-standard", "stylelint-config-html/astro"],
   "rules": {
-    "custom-property-pattern": null
+    "custom-property-pattern": null,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global", "export"]
+      }
+    ]
   }
 }
