@@ -1,0 +1,12 @@
+.greeting {
+	color: navy;
+	text-align: left;
+	font-size: 2em;
+}
+
+.newgreet {
+	color: navy;
+	background: #f3f5f9;
+	border: 1px solid navy;
+	font-size: 20px;
+}
