@@ -1,12 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Greeting from '../components/Greeting';
 const pageTitle = 'My Home Page';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<h2>
-		Sample site build with <a href="https://astro.build/">
-			<img src="https://docs.astro.build/assets/full-logo-dark.png" alt="Astro logo" />
+	<div>
+		<a href="https://astro.build/">
+			<img class="logo" src="/full-logo-dark.png" alt="Astro logo" />
 		</a>
-	</h2>
+		<a href="https://react.dev">
+			<img class="logo react" src="/react.svg" alt="React logo" />
+		</a>
+	</div>
+	<h2>Sample site build with Astro + React</h2>
+	<Greeting
+		client:load
+		messages={['Hi', 'Hello', 'Howdy', 'Hey there', 'Hej', 'Hallo', 'Hola', 'Habari']}
+	/>
 </BaseLayout>

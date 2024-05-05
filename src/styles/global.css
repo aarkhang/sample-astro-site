@@ -63,6 +63,37 @@ h1 {
 	display: unset;
 }
 
+.logo {
+	height: 6em;
+	padding: 1.5em;
+	will-change: filter;
+	transition: filter 300ms;
+}
+
+.logo:hover {
+	filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+	filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	a:nth-of-type(2) .logo {
+		animation: logo-spin infinite 20s linear;
+	}
+}
+
 @media screen and (width >= 636px) {
 	.nav-links {
 		margin-left: 5em;
@@ -80,4 +111,13 @@ h1 {
 	.hamburger {
 		display: none;
 	}
+}
+
+html.dark {
+	background-color: #0d0950;
+	color: #fff;
+}
+
+.dark .nav-links a {
+	color: #fff;
 }
